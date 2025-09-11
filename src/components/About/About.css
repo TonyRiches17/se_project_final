@@ -1,0 +1,44 @@
+.about {
+  display: flex;
+  gap: 56px;
+  padding: 80px 216px 80px 104px;
+}
+
+.about__picture-container {
+  width: 464px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid gray;
+  background-color: #949494;
+  overflow: hidden;
+  position: relative;
+}
+
+.about__picture {
+  width: 100%;
+  position: absolute;
+  top: 1px;
+  left: 0px;
+}
+
+.about__section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 24px;
+  max-width: 600px;
+  max-height: 120px;
+  margin-top: 51px;
+}
+
+.about__section-title {
+  font-size: 40px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.about__section-text {
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+}

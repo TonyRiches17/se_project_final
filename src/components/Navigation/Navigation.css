@@ -1,0 +1,32 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  padding: 19px 104px 13px;
+}
+
+.navigation__options {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 42px;
+}
+
+.navigation__options-home {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.navigation__options-button {
+  width: 176px;
+  height: 48px;
+  border: 1px solid #FFF;
+  border-radius: 100px;
+  background-color: transparent;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  cursor: pointer;
+}

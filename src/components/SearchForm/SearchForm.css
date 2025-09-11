@@ -1,0 +1,26 @@
+.searchform {
+  width: 608px;
+  position: relative;
+}
+
+.searchform__input {
+  width: 584px;
+  height: 64px;
+  border: 1px solid #D1D2D6;
+  border-radius: 100px;
+  background-color: #FFF;
+  padding: 0px 0px 0px 24px;
+}
+
+.searchform__button {
+  width: 168px;
+  height: 66px;
+  border: 1px solid #2F71E5;
+  border-radius: 100px;
+  background-color: #2F71E5;
+  color: #FFF;
+  position: absolute;
+  top: 0px;
+  right: -2px;
+  cursor: pointer;
+}
