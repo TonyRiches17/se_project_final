@@ -1,9 +1,17 @@
+import { useState } from "react";
 import "./SearchForm.css";
 
-function SearchForm( {handleSearch }) {
+function SearchForm({ handleSearch }) {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (evt) => {
+    setInputValue(evt.target.value);
+  }
+
+
   const handleOnSubmit = (evt) => {
     evt.preventDefault();
-    handleSearch("shoes");
+    handleSearch(inputValue);
   }
   return (
     <>
@@ -12,6 +20,7 @@ function SearchForm( {handleSearch }) {
           placeholder="Enter topic"
           type="text"
           className="searchform__input"
+          onChange={handleInputChange}
         />
         <button type="submit" className="searchform__button">Search</button>
       </form>

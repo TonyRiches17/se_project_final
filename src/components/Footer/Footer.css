@@ -1,0 +1,30 @@
+.footer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0px 104px;
+}
+
+.footer__copyright {
+  color: #B6BCBF;
+}
+
+.footer__links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-decoration: none;
+}
+
+.footer__links-words {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer__links-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}

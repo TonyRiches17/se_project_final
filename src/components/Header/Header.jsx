@@ -2,11 +2,11 @@ import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 
-function Header({ handleSearch }) {
+function Header({ handleSearch, handleSignInClick }) {
   return (
     <div className="header">
       <div className="header__background">
-        <Navigation />
+        <Navigation handleSignInClick={handleSignInClick} />
         <div className="header__container">
           <div className="header__words">
             <h1 className="header__title">
