@@ -1,8 +1,7 @@
 import { useState } from "react";
-import "./LoginModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function LoginModal({ activeModal, closeActiveModal, handleSignUpClick }) {
+function LoginModal({ activeModal, closeActiveModal, handleSignUpClick, handleSignInSubmit }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,9 +13,16 @@ function LoginModal({ activeModal, closeActiveModal, handleSignUpClick }) {
     setPassword(evt.target.value);
   };
 
+  const resetForm = () => {
+    setEmail("");
+    setPassword("");
+  };
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log("submitted the sign in request");
+    handleSignInSubmit({ email, password });
+    resetForm();
+    closeActiveModal();
   };
 
   const isValid = email && password;
@@ -34,10 +40,9 @@ function LoginModal({ activeModal, closeActiveModal, handleSignUpClick }) {
           onClick={handleSignUpClick}
         >Sign up</button></p>
       }
-      // contentStyle={{ "--modal-min-height": "304px" }}
       activeModal={activeModal}
       closeActiveModal={closeActiveModal}
-      onSubmit={handleSubmit}
+      handleSubmit={handleSubmit}
       isValid={isValid}
     >
       <label htmlFor="signin-email" className="modal__label">

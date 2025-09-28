@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function RegisterModal({ activeModal, closeActiveModal, handleSignInClick }) {
+function RegisterModal({ activeModal, closeActiveModal, handleSignInClick, handleSignUpSubmit }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -18,9 +18,17 @@ function RegisterModal({ activeModal, closeActiveModal, handleSignInClick }) {
     setUsername(evt.target.value);
   };
 
+  const resetForm = () => {
+    setEmail("");
+    setPassword("");
+    setUsername("");
+  };
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log("submitted the sign up request");
+    handleSignUpSubmit({ email, password, username });
+    resetForm();
+    closeActiveModal();
   };
 
   const isValid = email && password && username;
@@ -41,8 +49,9 @@ function RegisterModal({ activeModal, closeActiveModal, handleSignInClick }) {
       contentStyle={{ "--modal-min-height": "458px" }}
       activeModal={activeModal}
       closeActiveModal={closeActiveModal}
-      onSubmit={handleSubmit}
+      handleSubmit={handleSubmit}
       isValid={isValid}
+      handleSignUpSubmit={handleSignUpSubmit}
     >
       <label htmlFor="signup-email" className="modal__label">
         Email{""}

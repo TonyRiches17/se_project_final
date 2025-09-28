@@ -1,0 +1,22 @@
+.savednews {
+  padding: 40px 0px 56px 104px;
+}
+
+.savednews__title {
+  font-size: 18px;
+  color: rgba(26, 27, 34, 0.5);
+}
+
+.savednews__update {
+  font-size: 40px;
+  line-height: 46px;
+  color: rgba(26, 27, 34, 1);
+  width: 530px;
+}
+
+.savednews__articles {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}

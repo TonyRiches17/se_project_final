@@ -1,7 +1,20 @@
 import "./ModalWithForm.css";
 import closebutton from "../../assets/closebutton.svg";
 
-function ModalWithForm({ children, title, buttonText, additionalText, activeModal, closeActiveModal, handleSubmit, isValid, contentStyle }) {
+function ModalWithForm({ children, title, buttonText, additionalText, activeModal, closeActiveModal, handleSubmit, isValid }) {
+
+  // const getButtonClass = () => {
+  //   if(activeModal === "success") {
+  //     console.log(activeModal);
+  //     return "modal__submit_disappear";
+  //   }
+  //   if(isValid) {
+
+  //     return "modal__submit";
+  //   }
+  //   return "modal__submit_disabled"
+  // };
+
   return (
     <div className={`modal ${activeModal && "modal_opened"}`}>
       <div className="modal__content">
@@ -12,7 +25,7 @@ function ModalWithForm({ children, title, buttonText, additionalText, activeModa
         <form className="modal__form">
           {children}
           <div className="modal__submit-container">
-            <button onClick={handleSubmit} type="submit" className={isValid? "modal__submit" : "modal__submit_disabled"}>{buttonText}</button>
+            <button onClick={handleSubmit} type="submit" className={isValid ? "modal__submit" : "modal__submit_disabled"}>{buttonText}</button>
             <div className="modal__additional-text">{additionalText}</div>
           </div>
         </form>

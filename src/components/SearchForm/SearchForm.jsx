@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./SearchForm.css";
 
-function SearchForm({ handleSearch }) {
+function SearchForm({ handleSearch, lastSearchTerm, setLastSearchTerm }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (evt) => {
     setInputValue(evt.target.value);
+    setLastSearchTerm(evt.target.value);
   }
 
 
@@ -20,6 +21,7 @@ function SearchForm({ handleSearch }) {
           placeholder="Enter topic"
           type="text"
           className="searchform__input"
+          value={lastSearchTerm}
           onChange={handleInputChange}
         />
         <button type="submit" className="searchform__button">Search</button>

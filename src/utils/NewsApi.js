@@ -1,5 +1,8 @@
 import { newsApiBaseUrl, APIKey } from "./constants";
-import { checkResponse } from "./api";
+
+function checkResponse(res) {
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+}
 
 const getCurrentDate = () => {
 const today = new Date();
