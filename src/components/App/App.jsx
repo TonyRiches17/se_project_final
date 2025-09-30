@@ -20,6 +20,9 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchError, setSearchError] = useState("");
+  const [headerSearchError, setHeaderSearchError] = useState("");
+  const [signupError, setSignupError] = useState("");
+  const [signinError, setSigninError] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
   const [visibleCount, setVisibleCount] = useState(3);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -42,11 +45,17 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+    setSigninError("");
+    setSignupError("");
   };
 
   const handleSearch = (query) => {
+    if (query === "") {
+      return setHeaderSearchError("Please enter keyword");
+    }
     setKeyword(query);
     setIsLoading(true);
+    setHeaderSearchError("");
     setSearchError("");
     setArticles([]);
     searchNews(query)
@@ -66,17 +75,18 @@ function App() {
   };
 
   const handleSignUpSubmit = async ({ email, password, username }) => {
+    setSignupError("");
     try {
-      await signUp(email, password, username);
-      setUserData({ email, password, username });
-      closeActiveModal();
-      openSuccessModal();
+      const result = await signUp(email, password, username);
+      setUserData(result.user || { email, username });
     } catch (err) {
       console.error("Sign up failed:", err);
+      throw err;
     }
   };
 
   const handleSignInSubmit = async ({ email, password }) => {
+    setSigninError("");
     try {
       const { token, user } = await signIn(email, password);
       setUserData(user);
@@ -84,26 +94,29 @@ function App() {
       localStorage.setItem("token", token);
     } catch (err) {
       console.error("Sign in failed:", err);
+      throw err;
     }
   };
 
   const navigate = useNavigate();
 
   const handleLogoutClick = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem(`savedArticles_${userData.email}`);
     setIsLoggedIn(false);
     setUserData({});
     navigate("/");
   };
 
   const handleToggleSave = (article, keyword) => {
-    if(isLoggedIn) {
-    setSavedArticles((prev) =>
-      prev.some((a) => a.url === article.url)
-        ? prev.filter((a) => a.url !== article.url)
-        : [...prev, {...article, keyword: keyword}]
-    );
-    setKeyword(keyword);
-  }
+    if (isLoggedIn) {
+      setSavedArticles((prev) =>
+        prev.some((a) => a.url === article.url)
+          ? prev.filter((a) => a.url !== article.url)
+          : [...prev, { ...article, keyword: keyword }]
+      );
+      setKeyword(keyword);
+    }
   };
 
   useEffect(() => {
@@ -139,34 +152,38 @@ function App() {
     <>
       <Routes>
         <Route
-  path="/"
-  element={
-    <>
-      <Header
-        handleSignInClick={handleSignInClick}
-        handleSearch={handleSearch}
-        isLoggedIn={isLoggedIn}
-        userData={userData}
-        handleLogoutClick={handleLogoutClick}
-        setLastSearchTerm={setLastSearchTerm}
-        lastSearchTerm={lastSearchTerm}
-      />
-      {isLoading && <Preloader />}
-      {hasSearched && !isLoading && (
-        <Main
-          articles={articles}
-          hasSearched={hasSearched}
-          visibleCount={visibleCount}
-          setVisibleCount={setVisibleCount}
-          handleToggleSave={handleToggleSave}
-          savedArticles={savedArticles}
-          keyword={keyword}
+          path="/"
+          element={
+            <>
+              <Header
+                handleSignInClick={handleSignInClick}
+                handleSearch={handleSearch}
+                isLoggedIn={isLoggedIn}
+                userData={userData}
+                handleLogoutClick={handleLogoutClick}
+                setLastSearchTerm={setLastSearchTerm}
+                lastSearchTerm={lastSearchTerm}
+                headerSearchError={headerSearchError}
+                keyword={keyword}
+              />
+              {isLoading && <Preloader />}
+              {hasSearched && !isLoading && (
+                <Main
+                  articles={articles}
+                  hasSearched={hasSearched}
+                  visibleCount={visibleCount}
+                  setVisibleCount={setVisibleCount}
+                  handleToggleSave={handleToggleSave}
+                  savedArticles={savedArticles}
+                  keyword={keyword}
+                  isLoggedIn={isLoggedIn}
+                  searchError={searchError}
+                />
+              )}
+              <About />
+            </>
+          }
         />
-      )}
-      <About />
-    </>
-  }
-/>
         <Route
           path="/saved-news"
           element={
@@ -197,12 +214,17 @@ function App() {
         closeActiveModal={closeActiveModal}
         activeModal={activeModal === "sign-in"}
         handleSignInSubmit={handleSignInSubmit}
+        setSigninError={setSigninError}
+        signinError={signinError}
       />
       <RegisterModal
         handleSignInClick={handleSignInClick}
         closeActiveModal={closeActiveModal}
         activeModal={activeModal === "sign-up"}
         handleSignUpSubmit={handleSignUpSubmit}
+        setSignupError={setSignupError}
+        signupError={signupError}
+        openSuccessModal={openSuccessModal}
       />
       <SuccessSignupModal
         handleSignInClick={handleSignInClick}

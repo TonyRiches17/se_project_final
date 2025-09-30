@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function RegisterModal({ activeModal, closeActiveModal, handleSignInClick, handleSignUpSubmit }) {
+function RegisterModal({ activeModal, closeActiveModal, handleSignInClick, handleSignUpSubmit, setSignupError, signupError, openSuccessModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -24,12 +24,24 @@ function RegisterModal({ activeModal, closeActiveModal, handleSignInClick, handl
     setUsername("");
   };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    handleSignUpSubmit({ email, password, username });
-    resetForm();
-    closeActiveModal();
+const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await handleSignUpSubmit({ email, password, username });
+      resetForm();
+      closeActiveModal();
+      openSuccessModal();
+    } catch (err) {
+      if(err.message === "Please enter a valid email address") {
+        setSignupError("Invalid email entered");
+      }
+      if(err.message === "User already exists") {
+        setSignupError("Email already exists, please choose another");
+      }
+    }
   };
+
 
   const isValid = email && password && username;
 
@@ -52,6 +64,7 @@ function RegisterModal({ activeModal, closeActiveModal, handleSignInClick, handl
       handleSubmit={handleSubmit}
       isValid={isValid}
       handleSignUpSubmit={handleSignUpSubmit}
+      signupError={signupError}
     >
       <label htmlFor="signup-email" className="modal__label">
         Email{""}

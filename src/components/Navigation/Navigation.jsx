@@ -10,7 +10,7 @@ function Navigation({ handleSignInClick, isLoggedIn, userData, handleLogoutClick
   return (
     <div className={savedNewsPage ? "navigation_savednews" : "navigation"}>
       <p className="navigation__title">NewsExplorer</p>
-      <div className="navigation__options">
+      <div className={isLoggedIn ? "navigation__options_logged" :"navigation__options"}>
         <Link to="/" type="button" className={savedNewsPage ? "navigation__options-home_savednews" : "navigation__options-home"}>
           Home
         </Link>
@@ -33,11 +33,6 @@ function Navigation({ handleSignInClick, isLoggedIn, userData, handleLogoutClick
         </Link>
         <button
           onClick={handleLogoutClick}
-          // className={
-          //   isLoggedIn
-          //     ? "navigation__options-username_logged"
-          //     : "navigation__options-username"
-          // }
           className={savedNewsPage ? "navigation__options-username_logged_savednews" : isLoggedIn ? "navigation__options-username_logged" : "navigation__options-username"}
         >
           {userData.username}

@@ -41,13 +41,38 @@
   text-overflow: ellipsis;
 }
 
-.newscard__popup {
-  width: 100px;
-  height: 40px;
+.newscard__icon-and-tooltip {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.newscard__icon-and-tooltip:hover .newscard__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.newscard__tooltip {
+  width: max-content;
+  max-height: 40px;
   position: absolute;
   top: 24px;
-  left: 149px;
+  right: 69px;
   background-color: #FFF;
+  border-radius: 10px;
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-weight: 500;
+  padding: 14px 16px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.newscard__tooltip_disabled {
+  display: none;
 }
 
 .newscard__bookmark {

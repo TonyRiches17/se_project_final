@@ -32,13 +32,21 @@
 }
 
 .about__section-title {
+  font-family: "Roboto-Slab400", Arial, sans-serif;
+  font-weight: 400;
   font-size: 40px;
+  line-height: 46px;
+  letter-spacing: 0px;
   padding: 0px;
   margin: 0px;
 }
 
 .about__section-text {
+  font-family: "Roboto400", Arial, sans-serif;
+  font-weight: 400;
   font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
   padding: 0px;
   margin: 0px;
 }

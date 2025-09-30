@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function LoginModal({ activeModal, closeActiveModal, handleSignUpClick, handleSignInSubmit }) {
+function LoginModal({ activeModal, closeActiveModal, handleSignUpClick, handleSignInSubmit, setSigninError, signinError }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,12 +18,17 @@ function LoginModal({ activeModal, closeActiveModal, handleSignUpClick, handleSi
     setPassword("");
   };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    handleSignInSubmit({ email, password });
+  const handleSubmit = async (evt) => {
+  evt.preventDefault();
+
+  try {
+    await handleSignInSubmit({ email, password });
     resetForm();
     closeActiveModal();
-  };
+  } catch (err) {
+    setSigninError("Invalid or incorrect email or password");
+  }
+};
 
   const isValid = email && password;
 
@@ -44,6 +49,7 @@ function LoginModal({ activeModal, closeActiveModal, handleSignUpClick, handleSi
       closeActiveModal={closeActiveModal}
       handleSubmit={handleSubmit}
       isValid={isValid}
+      signinError={signinError}
     >
       <label htmlFor="signin-email" className="modal__label">
         Email{""}

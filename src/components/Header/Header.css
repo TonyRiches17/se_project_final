@@ -42,3 +42,8 @@
   padding: 0px;
   margin: 0px;
 }
+
+.header__search-error {
+  color: #FFF;
+  text-align: center;
+}

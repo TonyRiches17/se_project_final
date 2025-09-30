@@ -2,7 +2,7 @@ import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 
-function Header({ handleSearch, handleSignInClick, isLoggedIn, userData, handleLogoutClick, lastSearchTerm, setLastSearchTerm }) {
+function Header({ handleSearch, handleSignInClick, isLoggedIn, userData, handleLogoutClick, lastSearchTerm, setLastSearchTerm, keyword, headerSearchError }) {
   return (
     <div className="header">
       <div className="header__background">
@@ -19,6 +19,7 @@ function Header({ handleSearch, handleSignInClick, isLoggedIn, userData, handleL
           </div>
           <div className="header__search-bar">
           <SearchForm handleSearch={handleSearch} lastSearchTerm={lastSearchTerm} setLastSearchTerm={setLastSearchTerm} />
+          <p className="header__search-error">{headerSearchError}</p>
           </div>
         </div>
       </div>

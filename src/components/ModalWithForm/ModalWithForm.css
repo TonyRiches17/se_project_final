@@ -66,6 +66,12 @@
   border-bottom: 1px solid #000;
 }
 
+.modal__submit-error {
+  color: #F00;
+  text-align: center;
+  margin: 0px 0px 8px 0px;
+}
+
 .modal__submit {
   width: 360px;
   height: 64px;
@@ -86,10 +92,6 @@
   color: #B6BCBF;
 }
 
-/* .modal__submit_disappear {
-  display: none;
-} */
-
 .modal__additional-text {
   text-align: center;
   padding: 0px;
@@ -106,10 +108,3 @@
   color: #2F71E5;
   cursor: pointer;
 }
-
-/* .modal__success-signin {
-  background-color: transparent;
-  border: none;
-  color: #2F71E5;
-  cursor: pointer;
-} */

@@ -1,19 +1,29 @@
 const signUp = (email, password, username) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (email && password && username) {
-        // Store the username-email mapping in localStorage
-        const users = JSON.parse(localStorage.getItem('users') || '{}');
-        users[email] = { username, password }; // Store username with email as key
-        localStorage.setItem('users', JSON.stringify(users));
-
-        resolve({ message: "Registration successful" });
-      } else {
-        reject(new Error("All fields are required"));
+      if (!email || !password || !username) {
+        return reject(new Error("All fields are required"));
       }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return reject(new Error("Please enter a valid email address"));
+      }
+
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+      if (users[email]) {
+        return reject(new Error("User already exists"));
+      }
+
+      users[email] = { username, password };
+      localStorage.setItem("users", JSON.stringify(users));
+
+      resolve({ message: "Registration successful", user: { email, username } });
     }, 1000);
   });
 };
+
 
 const signIn = (email, password) => {
   return new Promise((resolve, reject) => {

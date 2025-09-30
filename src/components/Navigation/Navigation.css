@@ -13,10 +13,12 @@
   align-items: center;
   color: #1A1B22;
   padding: 19px 104px 13px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .navigation__title {
+  font-family: "Roboto-Slab700";
+  font-weight: 700;
   margin: 0px;
 }
 
@@ -27,6 +29,13 @@
   gap: 42px;
 }
 
+.navigation__options_logged {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 76px;
+}
+
 .navigation__options-home {
   font-size: 18px;
   line-height: 24px;
@@ -35,6 +44,17 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  position: relative;
+}
+
+.navigation__options-home::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: -12px;
+  width: 68px;
+  height: 3px;
+  background-color: #FFF;
 }
 
 .navigation__options-home_savednews {
@@ -84,6 +104,17 @@
   color: #1A1B22;
   background-color: transparent;
   border: none;
+  position: relative;
+}
+
+.navigation__options-saved_logged_savednews::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: -39px;
+  width: 178px;
+  height: 3px;
+  background-color: #1A1B22;
 }
 
 .navigation__options-username {
@@ -105,6 +136,7 @@
   color: #FFF;
   background-color: transparent;
   padding: 5px 0px 5px 19px;
+  cursor: pointer;
 }
 
 .navigation__options-username_logged_savednews {
@@ -122,10 +154,12 @@
   color: #1A1B22;
   background-color: transparent;
   padding: 5px 0px 5px 19px;
+  cursor: pointer;
 }
 
 .navigation__options-username-logout {
   width: 24px;
   height: 24px;
   padding: 5px 15px 5px 0px;
+  cursor: pointer;
 }

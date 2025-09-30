@@ -3,10 +3,15 @@
   display: flex;
   align-items: center;
   padding: 0px 104px;
+  font-family: "Roboto400", Arial, sans-serif;
+  font-weight: 400;
 }
 
 .footer__copyright {
-  color: #B6BCBF;
+  color: #b6bcbf;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
 }
 
 .footer__links {
@@ -21,6 +26,9 @@
   display: flex;
   align-items: center;
   gap: 40px;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
 }
 
 .footer__links-icons {
