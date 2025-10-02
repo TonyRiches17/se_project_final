@@ -39,4 +39,6 @@ Figma is a web based program that allows coders and designers to interact with e
 * [Link to the project on Figma](https://www.figma.com/design/3ottwMEhlBt95Dbn8dw1NH/Your-Final-Project?node-id=22618-1233&t=zgmwNaeN8mY7r7oZ-0)
 
 * [Link to the repository](https://github.com/TonyRiches17/se_project_final.git)
+
+* [Link to the deployed site](https://richnewsexplorer.netlify.app/)
 ---
