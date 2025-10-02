@@ -4,7 +4,7 @@
   max-width: 400px;
   height: 576px;
   border-radius: 16px;
-  background-color: #FFF;
+  background-color: #fff;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -16,7 +16,7 @@
 
 .newscard__keyword-container {
   max-width: 100px;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 10px;
   position: absolute;
   top: 24px;
@@ -29,10 +29,10 @@
 
 .newscard__keyword {
   margin: 0px;
-  font-family: "Roboto";
+  font-family: "Roboto-500", Arial, sans-serif;
+  font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  font-weight: 500;
   letter-spacing: 0;
   padding: 8px;
   max-width: 100px;
@@ -58,13 +58,13 @@
   position: absolute;
   top: 24px;
   right: 69px;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 10px;
-  font-family: "Roboto";
+  font-family: "Roboto-Slab700", Arial, sans-serif;
+  font-weight: 500;
   font-size: 12px;
   line-height: 100%;
-  letter-spacing: 0;
-  font-weight: 500;
+  letter-spacing: 0%;
   padding: 14px 16px;
   visibility: hidden;
   opacity: 0;
@@ -120,16 +120,25 @@
 }
 
 .newscard__date {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
   padding: 20px 24px 0px;
   margin-top: auto;
-  font-size: 18px;
+  color: #b6bcbf;
 }
 
 .newscard__title {
-  /* font-family: "Roboto-Slab"; */
+  font-family: "Roboto-Slab400", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #1a1b22;
   padding: 0px 24px 0px;
   margin: 0px 0px 16px;
-  font-size: 26px;
   height: 60px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -139,6 +148,12 @@
 }
 
 .newscard__description {
+  font-family: "Roboto400", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #1a1b22;
   padding: 0px 24px 0px;
   margin: 0px;
   font-size: 16px;
@@ -151,9 +166,42 @@
 }
 
 .newscard__source {
+  font-family: "Roboto-Slab700", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #b6bcbf;
   padding: 0px 24px 24px;
   margin-bottom: auto;
-  font-size: 16px;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1300px) {
+  .newscard {
+    max-width: 375px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .newscard {
+    max-width: 325px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .newscard {
+    max-width: 300px;
+  }
+
+  .newscard__title {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .newscard {
+    max-width: 288px;
+  }
 }

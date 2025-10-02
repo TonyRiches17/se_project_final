@@ -7,13 +7,12 @@ function SearchForm({ handleSearch, lastSearchTerm, setLastSearchTerm }) {
   const handleInputChange = (evt) => {
     setInputValue(evt.target.value);
     setLastSearchTerm(evt.target.value);
-  }
-
+  };
 
   const handleOnSubmit = (evt) => {
     evt.preventDefault();
     handleSearch(inputValue);
-  }
+  };
   return (
     <>
       <form onSubmit={handleOnSubmit} className="searchform">
@@ -24,7 +23,9 @@ function SearchForm({ handleSearch, lastSearchTerm, setLastSearchTerm }) {
           value={lastSearchTerm}
           onChange={handleInputChange}
         />
-        <button type="submit" className="searchform__button">Search</button>
+        <button type="submit" className="searchform__button">
+          Search
+        </button>
       </form>
     </>
   );

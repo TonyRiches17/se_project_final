@@ -10,22 +10,22 @@
 
 @font-face {
   font-family: "Roboto400";
-  src: url(".fonts/roboto-400-regular.woff2") format("woff2");
+  src: url("./fonts/roboto-400-regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Roboto500";
-  src: url(".fonts/roboto-500.woff2") format("woff2");
+  src: url("./fonts/roboto-500.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Roboto700";
-  src: url(".fonts/roboto-700.woff2") format("woff2");
+  src: url("./fonts/roboto-700.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Roboto900";
-  src: url(".fonts/roboto-900.woff2") format("woff2");
+  src: url("./fonts/roboto-900.woff2") format("woff2");
 }
 
 @font-face {
@@ -36,4 +36,9 @@
 @font-face {
   font-family: "Roboto-Slab700";
   src: url("./fonts/roboto-slab-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("./fonts/SourceSansPro-Regular.otf") format("opentype");
 }

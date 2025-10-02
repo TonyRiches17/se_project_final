@@ -19,16 +19,18 @@ const signUp = (email, password, username) => {
       users[email] = { username, password };
       localStorage.setItem("users", JSON.stringify(users));
 
-      resolve({ message: "Registration successful", user: { email, username } });
+      resolve({
+        message: "Registration successful",
+        user: { email, username },
+      });
     }, 1000);
   });
 };
 
-
 const signIn = (email, password) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const users = JSON.parse(localStorage.getItem('users') || '{}');
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
       const user = users[email];
 
       if (user && user.password === password) {
@@ -36,12 +38,11 @@ const signIn = (email, password) => {
           token: "superhardpassword",
           user: {
             email,
-            username: user.username
-          }
+            username: user.username,
+          },
         };
 
-
-        localStorage.setItem('currentUser', JSON.stringify(userData.user));
+        localStorage.setItem("currentUser", JSON.stringify(userData.user));
 
         resolve(userData);
       } else {
@@ -51,18 +52,17 @@ const signIn = (email, password) => {
   });
 };
 
-
 const checkToken = (token) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (token === "superhardpassword") {
-        // Get the current user data from localStorage
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
         if (currentUser) {
           resolve({
             email: currentUser.email,
-            username: currentUser.username // Use stored username, not hardcoded name
+            username: currentUser.username,
           });
         } else {
           reject(new Error("No user data found"));
