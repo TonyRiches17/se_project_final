@@ -34,6 +34,15 @@
   top: 0px;
   right: -2px;
   cursor: pointer;
+  transition: background 0.2s linear;
+}
+
+.searchform__button:hover {
+  background-color: #347eff;
+}
+
+.searchform__button:active {
+  background-color: #2a65cc;
 }
 
 @media screen and (max-width: 1400px) {

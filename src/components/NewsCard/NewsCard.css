@@ -11,7 +11,7 @@
 }
 
 .newscard__image {
-  min-height: 272px;
+  height: 272px;
 }
 
 .newscard__keyword-container {
@@ -176,6 +176,7 @@
   margin-bottom: auto;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1300px) {
@@ -200,8 +201,38 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .newscard {
+    max-width: 275px;
+    height: 440px;
+  }
+
+  .newscard__title {
+    font-size: 22px;
+    line-height: 24px;
+    white-space: nowrap;
+    margin: 0px 0px 20px;
+  }
+
+  .newscard__description {
+    height: 100px;
+  }
+
+  .newscard__tooltip {
+    width: 100px;
+    padding: 8px;
+    top: 69px;
+    right: 24px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .newscard {
-    max-width: 288px;
+    max-width: 224px;
+    height: 420px;
+  }
+
+  .newscard__image {
+    height: 150px;
   }
 }

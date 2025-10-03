@@ -99,6 +99,13 @@
 
 @media screen and (max-width: 900px) {
   .about {
+    padding: 40px;
+    gap: 32px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about {
     height: max-content;
     flex-direction: column;
     justify-content: center;

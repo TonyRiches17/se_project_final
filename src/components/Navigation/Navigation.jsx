@@ -4,6 +4,7 @@ import logouticon from "../../assets/logouticon.svg";
 import logouticonblack from "../../assets/logouticonblack.svg";
 import menu from "../../assets/menu.svg";
 import menuclose from "../../assets/menuclose.svg";
+import menublack from "../../assets/menublack.svg";
 import { useState } from "react";
 
 function Navigation({
@@ -46,7 +47,15 @@ function Navigation({
               : "navigation__options-menu-dropdown_disappear"
           }
         >
-          <p className="navigation__dropdown-title">NewsExplorer</p>
+          <p
+            className={
+              savedNewsPage
+                ? "navigation__dropdown-title_saved"
+                : "navigation__dropdown-title"
+            }
+          >
+            NewsExplorer
+          </p>
           <div className="navigation__dropdown-underline"></div>
           <Link to="/reset" type="button" className="navigation__dropdown-home">
             Home
@@ -55,7 +64,9 @@ function Navigation({
             to="saved-news"
             type="button"
             className={
-              isLoggedIn
+              savedNewsPage
+                ? "navigation__dropdown-savednews_disappear"
+                : isLoggedIn
                 ? "navigation__dropdown-savednews"
                 : "navigation__dropdown-savednews_disappear"
             }
@@ -136,13 +147,17 @@ function Navigation({
         className="navigation__options-menu-button"
       >
         <img
-          src={isClicked ? menuclose : menu}
+          src={savedNewsPage ? menublack : isClicked ? menuclose : menu}
           alt={
             isClicked
               ? "Picture of a menu close button"
               : "Picture of a menu button"
           }
-          className="navigation__options-menu-image"
+          className={
+            savedNewsPage && isClicked
+              ? "navigation__options-menu-image_modified"
+              : "navigation__options-menu-image"
+          }
         />
       </button>
     </div>
