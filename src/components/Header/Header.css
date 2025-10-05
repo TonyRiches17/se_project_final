@@ -69,11 +69,11 @@
 @media screen and (max-width: 1400px) {
   .header {
     max-width: 100vw;
-    height: 41%;
+    height: 500px;
   }
 
   .header__background {
-    height: 41%;
+    height: 500px;
   }
 
   .header__container {
@@ -106,15 +106,15 @@
     font-size: 36px;
     line-height: 40px;
   }
+
+  .header__search-bar {
+    padding: 0px 0px 0px 55px;
+  }
 }
 
 @media screen and (max-width: 900px) {
-  .header {
-    height: 550px;
-  }
-
-  .header__background {
-    height: 550px;
+  .header__search-bar {
+    width: 600px;
   }
 }
 
@@ -132,11 +132,22 @@
   .header__background {
     height: 536px;
   }
+
   .header__title {
     width: 285px;
   }
 
+  .header__words {
+    width: none;
+    max-width: 320px;
+  }
+
   .header__text {
     width: 285px;
+  }
+
+  .header__search-bar {
+    width: 320px;
+    padding: 0;
   }
 }

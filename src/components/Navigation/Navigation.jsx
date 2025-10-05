@@ -155,7 +155,9 @@ function Navigation({
           }
           className={
             savedNewsPage && isClicked
-              ? "navigation__options-menu-image_modified"
+              ? "navigation__options-menu-image_saved"
+              : isClicked
+              ? "navigation__options-menu-image_clicked"
               : "navigation__options-menu-image"
           }
         />
