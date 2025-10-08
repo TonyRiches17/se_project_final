@@ -1,12 +1,12 @@
 import "./About.css";
-import aboutpicture from "../../assets/aboutpicture.png";
+import aboutPicture from "../../assets/aboutpicture.png";
 
 function About() {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__picture-container">
         <img
-          src={aboutpicture}
+          src={aboutPicture}
           alt="Picture of Author"
           className="about__picture"
         />
@@ -27,7 +27,7 @@ function About() {
           website development goals.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

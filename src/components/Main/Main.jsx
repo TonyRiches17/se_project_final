@@ -1,6 +1,6 @@
 import NewsCard from "../NewsCard/NewsCard";
 import "./Main.css";
-import notfoundpicture from "../../assets/notfoundpicture.svg";
+import notFoundPicture from "../../assets/notfoundpicture.svg";
 
 function Main({
   articles,
@@ -21,7 +21,7 @@ function Main({
   };
 
   return (
-    <div className={articles.length > 0 ? "main" : "main__notfound"}>
+    <main className={articles.length > 0 ? "main" : "main__notfound"}>
       <h2
         className={articles.length > 0 ? "main__title" : "main__title_notfound"}
       >
@@ -52,7 +52,7 @@ function Main({
               {searchError}
             </p>
             <img
-              src={notfoundpicture}
+              src={notFoundPicture}
               alt="Picture of not found logo"
               className="main__notfound-image"
             />
@@ -74,7 +74,7 @@ function Main({
           Show more
         </button>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./ModalWithForm.css";
-import closebutton from "../../assets/closebutton.svg";
+import closeButton from "../../assets/closebutton.svg";
 
 function ModalWithForm({
   children,
@@ -41,12 +41,12 @@ function ModalWithForm({
           className="modal__close-button"
         >
           <img
-            src={closebutton}
+            src={closeButton}
             alt="Picture of close button 'X'"
             className="modal__close-button-image"
           />
         </button>
-        <form className="modal__form">
+        <form onSubmit={handleSubmit} className="modal__form">
           {children}
           <div className="modal__submit-container">
             <p className="modal__submit-error">
@@ -54,7 +54,6 @@ function ModalWithForm({
               {signinError}{" "}
             </p>
             <button
-              onClick={handleSubmit}
               type="submit"
               className={isValid ? "modal__submit" : "modal__submit_disabled"}
             >

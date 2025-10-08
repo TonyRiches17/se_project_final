@@ -1,4 +1,4 @@
-import { newsApiBaseUrl, APIKey } from "./constants";
+import { newsApiBaseUrl, apiKey } from "./constants";
 
 function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
@@ -22,6 +22,6 @@ const getDateSevenDaysAgo = () => {
 };
 
 export const searchNews = (query) => {
-  const url = `${newsApiBaseUrl}?q=${query}&from=${getDateSevenDaysAgo()}&to=${getCurrentDate()}&pageSize=100&apiKey=${APIKey}`;
+  const url = `${newsApiBaseUrl}?q=${query}&from=${getDateSevenDaysAgo()}&to=${getCurrentDate()}&pageSize=100&apiKey=${apiKey}`;
   return fetch(url).then(checkResponse);
 };

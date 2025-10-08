@@ -40,54 +40,52 @@ function LoginModal({
   const isValid = email && password;
 
   return (
-    <>
-      <ModalWithForm
-        title="Sign In"
-        buttonText="Sign In"
-        additionalText={
-          <p className="modal__link_text">
-            or
-            <button
-              type="button"
-              className="modal__link"
-              onClick={handleSignUpClick}
-            >
-              Sign up
-            </button>
-          </p>
-        }
-        activeModal={activeModal}
-        closeActiveModal={closeActiveModal}
-        handleSubmit={handleSubmit}
-        isValid={isValid}
-        signinError={signinError}
-      >
-        <label htmlFor="signin-email" className="modal__label">
-          Email{""}
-          <input
-            id="signin-email"
-            type="email"
-            className="modal__input"
-            placeholder="Enter email"
-            required
-            onChange={handleEmailChange}
-            value={email}
-          />
-        </label>
-        <label htmlFor="signin-password" className="modal__label">
-          Password{""}
-          <input
-            id="signin-password"
-            type="password"
-            className="modal__input"
-            placeholder="Enter password"
-            required
-            onChange={handlePasswordChange}
-            value={password}
-          />
-        </label>
-      </ModalWithForm>
-    </>
+    <ModalWithForm
+      title="Sign In"
+      buttonText="Sign In"
+      additionalText={
+        <p className="modal__link_text">
+          or
+          <button
+            type="button"
+            className="modal__link"
+            onClick={handleSignUpClick}
+          >
+            Sign up
+          </button>
+        </p>
+      }
+      activeModal={activeModal}
+      closeActiveModal={closeActiveModal}
+      handleSubmit={handleSubmit}
+      isValid={isValid}
+      signinError={signinError}
+    >
+      <label htmlFor="signin-email" className="modal__label">
+        Email{""}
+        <input
+          id="signin-email"
+          type="email"
+          className="modal__input"
+          placeholder="Enter email"
+          required
+          onChange={handleEmailChange}
+          value={email}
+        />
+      </label>
+      <label htmlFor="signin-password" className="modal__label">
+        Password{""}
+        <input
+          id="signin-password"
+          type="password"
+          className="modal__input"
+          placeholder="Enter password"
+          required
+          onChange={handlePasswordChange}
+          value={password}
+        />
+      </label>
+    </ModalWithForm>
   );
 }
 

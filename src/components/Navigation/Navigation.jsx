@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
-import logouticon from "../../assets/logouticon.svg";
-import logouticonblack from "../../assets/logouticonblack.svg";
+import logoutIcon from "../../assets/logouticon.svg";
+import logoutIconBlack from "../../assets/logouticonblack.svg";
 import menu from "../../assets/menu.svg";
 import menuclose from "../../assets/menuclose.svg";
 import menublack from "../../assets/menublack.svg";
@@ -135,7 +135,7 @@ function Navigation({
         >
           {userData.username}
           <img
-            src={savedNewsPage ? logouticonblack : logouticon}
+            src={savedNewsPage ? logoutIconBlack : logoutIcon}
             alt="Picture of a logout icon"
             className="navigation__options-username-logout"
           />

@@ -21,7 +21,6 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  text-decoration: none;
 }
 
 .footer__links-words {
@@ -31,6 +30,16 @@
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0px;
+}
+
+.footer__link-home {
+  text-decoration: none;
+  color: #1a1b22;
+}
+
+.footer__link-tripleten {
+  text-decoration: none;
+  color: #1a1b22;
 }
 
 .footer__links-icons {

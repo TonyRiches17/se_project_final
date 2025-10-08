@@ -1,10 +1,10 @@
 import "./Footer.css";
-import githubicon from "../../assets/githubicon.svg";
-import linkedinicon from "../../assets/linkedinicon.svg";
+import githubIcon from "../../assets/githubicon.svg";
+import linkedinIcon from "../../assets/linkedinicon.svg";
 
 function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <p className="footer__copyright">&copy; 2025 Ri₵h, Powered by News API</p>
       <div className="footer__links">
         <div className="footer__links-words">
@@ -21,21 +21,21 @@ function Footer() {
         <div className="footer__links-icons">
           <a href="https://www.github.com" className="footer__link-github">
             <img
-              src={githubicon}
+              src={githubIcon}
               alt="Picture of the Github icon"
               className="footer__link-github-icon"
             />
           </a>
           <a href="https://www.linkedin.com" className="footer__link-linkedin">
             <img
-              src={linkedinicon}
+              src={linkedinIcon}
               alt="Picture of the LinkedIn icon"
               className="footer__link-linkedinicon"
             />
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

@@ -14,7 +14,7 @@ function Header({
   headerSearchError,
 }) {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__background">
         <Navigation
           handleSignInClick={handleSignInClick}
@@ -42,7 +42,7 @@ function Header({
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 

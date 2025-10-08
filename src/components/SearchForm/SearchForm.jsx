@@ -14,20 +14,18 @@ function SearchForm({ handleSearch, lastSearchTerm, setLastSearchTerm }) {
     handleSearch(inputValue);
   };
   return (
-    <>
-      <form onSubmit={handleOnSubmit} className="searchform">
-        <input
-          placeholder="Enter topic"
-          type="text"
-          className="searchform__input"
-          value={lastSearchTerm}
-          onChange={handleInputChange}
-        />
-        <button type="submit" className="searchform__button">
-          Search
-        </button>
-      </form>
-    </>
+    <form onSubmit={handleOnSubmit} className="searchform">
+      <input
+        placeholder="Enter topic"
+        type="text"
+        className="searchform__input"
+        value={lastSearchTerm}
+        onChange={handleInputChange}
+      />
+      <button type="submit" className="searchform__button">
+        Search
+      </button>
+    </form>
   );
 }
 
