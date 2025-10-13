@@ -36,6 +36,10 @@ Vite was utilized to assist React and all of it's configurations.
 
 Figma is a web based program that allows coders and designers to interact with each other for the purposes of collaborating on a project together. You can find the link to the Figma project below.
 
+## Conclusion
+
+This project was successfully and completely implented to search news articles and filter their relavance from your search query. After successful registration and login, you are able to successfully save articles to your profile. As a future implementation, a backend shall be created to keep track of your articles for persistence.
+
 * [Link to the project on Figma](https://www.figma.com/design/3ottwMEhlBt95Dbn8dw1NH/Your-Final-Project?node-id=22618-1233&t=zgmwNaeN8mY7r7oZ-0)
 
 * [Link to the repository](https://github.com/TonyRiches17/se_project_final.git)
