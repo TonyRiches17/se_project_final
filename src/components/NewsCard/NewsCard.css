@@ -1,0 +1,238 @@
+.newscard {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  height: 576px;
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.newscard__image {
+  height: 272px;
+}
+
+.newscard__keyword-container {
+  max-width: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.newscard__keyword-container_disabled {
+  display: none;
+}
+
+.newscard__keyword {
+  margin: 0px;
+  font-family: "Roboto-500", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0;
+  padding: 8px;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.newscard__icon-and-tooltip {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.newscard__icon-and-tooltip:hover .newscard__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.newscard__tooltip {
+  width: max-content;
+  max-height: 40px;
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  background-color: #fff;
+  border-radius: 10px;
+  font-family: "Roboto-Slab700", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding: 14px 16px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.newscard__tooltip_disabled {
+  display: none;
+}
+
+.newscard__bookmark {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../../assets/bookmarknormal.svg");
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+.newscard__bookmark:hover {
+  background-image: url("../../assets/bookmarkhover.svg");
+}
+
+.newscard__bookmark_clicked {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../../assets/bookmarksaved.svg");
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+.newscard__trashcan {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../../assets/trashcangray.svg");
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+.newscard__trashcan:hover {
+  background-image: url("../../assets/trashcanblack.svg");
+}
+
+.newscard__date {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  padding: 20px 24px 0px;
+  margin-top: auto;
+  color: #b6bcbf;
+}
+
+.newscard__title {
+  font-family: "Roboto-Slab400", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #1a1b22;
+  padding: 0px 24px 0px;
+  margin: 0px 0px 16px;
+  height: 60px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.newscard__description {
+  font-family: "Roboto400", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #1a1b22;
+  padding: 0px 24px 0px;
+  margin: 0px;
+  font-size: 16px;
+  height: 110px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.newscard__source {
+  font-family: "Roboto-Slab700", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #b6bcbf;
+  padding: 0px 24px 24px;
+  margin-bottom: auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1300px) {
+  .newscard {
+    max-width: 375px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .newscard {
+    max-width: 325px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .newscard {
+    max-width: 300px;
+  }
+
+  .newscard__title {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .newscard {
+    max-width: 275px;
+    height: 440px;
+  }
+
+  .newscard__title {
+    font-size: 22px;
+    line-height: 24px;
+    white-space: nowrap;
+    margin: 0px 0px 20px;
+  }
+
+  .newscard__description {
+    height: 100px;
+  }
+
+  .newscard__tooltip {
+    width: 100px;
+    padding: 8px;
+    top: 69px;
+    right: 24px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .newscard {
+    max-width: 224px;
+    height: 420px;
+  }
+
+  .newscard__image {
+    height: 150px;
+  }
+}
